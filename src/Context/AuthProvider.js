@@ -45,7 +45,11 @@ const AuthProvider = ({children}) => {
     const forgetPassword=(email)=>{
         return sendPasswordResetEmail(auth,email);
     }
-    const authInfo={user,providerLogin,SignOut,loading,forgetPassword,createUser,loginUser,updateUserProfile,setLoading};
+    const [theme,setTheme]=useState("light");
+    const toggleTheme=()=>{
+        setTheme((curr)=>curr==='light'?'dark':'light');
+    }
+    const authInfo={user,providerLogin,SignOut,theme,toggleTheme,loading,forgetPassword,createUser,loginUser,updateUserProfile,setLoading};
     return (
         <div>
             <AuthContext.Provider value={authInfo}>

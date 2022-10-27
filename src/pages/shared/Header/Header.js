@@ -3,7 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { FaUserAlt } from "react-icons/fa";
-
+import Switch from "react-switch";
 import {Link} from "react-router-dom";
 import {NavLink} from 'react-router-dom';
 import logo from './logo.png';
@@ -12,7 +12,7 @@ import './Header.css';
 import { AuthContext } from '../../../Context/AuthProvider';
 
 const Header = () => {
-    const {user,SignOut}=useContext(AuthContext);
+    const {user,SignOut,theme,toggleTheme,}=useContext(AuthContext);
     const logOut=()=>{
         SignOut()
         .then(()=>{})
@@ -31,7 +31,7 @@ const Header = () => {
                     <Navbar.Collapse id="responsive-navbar-nav">
                        
                         <Nav className="ms-auto nav-item">
-                          
+                            <Switch onChange={toggleTheme} checked={theme==='dark'} className='me-3 fs-2 switch'/>
                             <NavLink to="/courses" activeclassname="active">COURSES</NavLink>
                             <NavLink to="/faq" activeclassname="active">FAQ</NavLink>
                             <NavLink to="/blog" activeclassname="active">BLOG</NavLink>

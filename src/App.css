@@ -2,3 +2,9 @@
 * {
 	font-family: 'Poppins', sans-serif;
 }
+#light{
+	background-color: white;
+}
+#dark{
+	background-color: #1e2f507d;
+}
