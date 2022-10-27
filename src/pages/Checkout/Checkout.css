@@ -1,0 +1,12 @@
+.checkout .card{
+    background-color: #1e2f50e9;
+    color: white;
+}
+@media (max-width: 600px) {
+    .checkout .card{
+       width:100%!important;
+    }
+    .ch{
+        margin-left:10px!important;
+    }
+}

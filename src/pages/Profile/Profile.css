@@ -1,0 +1,15 @@
+.profile .card{
+    background-color: #1e2f50a5;
+    color:white;
+}
+.modal .modal-dialog{
+    background-color: #1e2f50;
+    color:white; 
+}
+@media (max-width: 600px) { 
+    .profile .card{
+       width:100%!important;
+    }
+    
+   
+    }

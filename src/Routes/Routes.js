@@ -11,6 +11,8 @@ import Blog from "../pages/shared/Blog/Blog";
 import Course from "../pages/Course/Course";
 import Checkout from "../pages/Checkout/Checkout";
 import Privateroute from "./Privateroute/Privateroute";
+import Error from "../pages/Error/Error";
+
 
 
 
@@ -29,18 +31,22 @@ export const routes=createBrowserRouter([
             {
                 path:'/category/:id',
                 element:<Category></Category>,
-                loader:({params})=>fetch(`https://learning-platform-server-beige.vercel.app/category/${params.id}`)
+                loader:({params})=>fetch(`https://learning-platform-server-beige.vercel.app/category/${params.id}`),
+                errorElement: <Error></Error>
             },
             {
                 path:'/course/:id',
                 element:<Course></Course>,
-                loader:({params})=>fetch(`https://learning-platform-server-beige.vercel.app/course/${params.id}`)
-              
+                loader:({params})=>fetch(`https://learning-platform-server-beige.vercel.app/course/${params.id}`),
+                errorElement: <Error></Error>
+
             },
             {
                 path:'/course-checkout/:id',
                 element:<Privateroute><Checkout></Checkout></Privateroute>,
-                loader:({params})=>fetch(`https://learning-platform-server-beige.vercel.app/course/${params.id}`)
+                loader:({params})=>fetch(`https://learning-platform-server-beige.vercel.app/course/${params.id}`),
+                errorElement: <Error></Error>
+
               
             },
             {
@@ -67,9 +73,10 @@ export const routes=createBrowserRouter([
             },
             {
                 path:'/profile',
-                element:<Profile></Profile>
+                element:<Privateroute><Profile></Profile></Privateroute>
             }
             
         ]
-    }
+    },
+    {path:'*',element:<Error></Error>}, 
 ])
