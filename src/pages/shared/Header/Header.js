@@ -31,7 +31,9 @@ const Header = () => {
                     <Navbar.Collapse id="responsive-navbar-nav">
                        
                         <Nav className="ms-auto nav-item">
-                            <Switch onChange={toggleTheme} checked={theme==='dark'} className='me-3 fs-2 switch'/>
+                           <div className='switch'>
+                           <Switch onChange={toggleTheme} checked={theme==='dark'} className='me-3 fs-2'/>
+                           </div>
                             <NavLink to="/courses" activeclassname="active">COURSES</NavLink>
                             <NavLink to="/faq" activeclassname="active">FAQ</NavLink>
                             <NavLink to="/blog" activeclassname="active">BLOG</NavLink>
